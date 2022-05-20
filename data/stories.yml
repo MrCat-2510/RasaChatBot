@@ -1,0 +1,205 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: read_news
+  - action: action_news
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_name: Tùng
+  - slot_was_set:
+    - cust_name: Tùng
+  - action: utter_greet_with_name
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: deny
+
+- story: interactive_story_1
+  steps:
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_name: Ba
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: Anh
+    - cust_name: Tùng
+  - slot_was_set:
+    - cust_sex: Anh
+  - slot_was_set:
+    - cust_name: Tùng
+  - action: utter_greet_with_name
+  - intent: mood_great
+    entities:
+    - cust_sex: Anh
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: anh
+    - cust_name: Tùng
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: chị
+    - cust_name: Nhi
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - intent: affirm
+  - action: utter_happy
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: Anh
+    - cust_name: Tùng
+  - slot_was_set:
+    - cust_sex: Anh
+  - slot_was_set:
+    - cust_name: Tùng
+  - action: utter_greet_with_name
+  - intent: mood_great
+  - intent: mood_great
+  - action: utter_happy
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: bạn
+    - cust_name: Tùng
+  - slot_was_set:
+    - cust_name: Tùng
+  - action: utter_greet_with_name
+  - intent: mood_great
+  - action: utter_happy
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: chị
+    - cust_name: Nên
+  - action: utter_greet_with_name
+  - intent: read_news
+  - action: action_news
+
+- story: interactive_story_1
+  steps:
+  - intent: nlu_fallback
+  - action: utter_unclear
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_name: Nguyễn Văn A
+  - action: utter_greet_with_name
+  - intent: read_news
+  - action: action_news
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+    entities:
+    - cust_sex: em
+    - cust_name: Như
+  - slot_was_set:
+    - cust_sex: em
+  - slot_was_set:
+    - cust_name: Như
+  - action: utter_greet_with_name
+  - intent: mood_unhappy
+    entities:
+    - cust_sex: em
+  - action: utter_cheer_up
+  - intent: affirm
+    entities:
+    - cust_sex: em
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye

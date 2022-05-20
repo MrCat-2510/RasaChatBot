@@ -1,0 +1,66 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- give_name
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- nlu_fallback
+- read_news
+entities:
+- cust_name
+- cust_sex
+slots:
+  cust_sex:
+    type: text
+    influence_conversation: true
+    initial_value: bạn
+    mappings:
+    - type: from_entity
+      entity: cust_sex
+  cust_name:
+    type: text
+    influence_conversation: true
+    initial_value: X
+    mappings:
+    - type: from_entity
+      entity: cust_name
+responses:
+  utter_greet:
+  - text: Xin chào, bạn tên là gì?
+  - text: Xin chào, mình nên gọi bạn là gì?
+  - text: Xin chào, mình nên xưng hô bạn như thế nào?
+  utter_greet_with_name:
+  - text: Xin chào {cust_sex} {cust_name}, {cust_sex} cần giúp gì ạ?
+  - text: Xin chào {cust_sex} {cust_name}, hôm nay {cust_sex} cần gì ạ?
+  - text: Chào {cust_sex} {cust_name}, {cust_sex} cần giúp gì?
+  utter_cheer_up:
+  - text: Hi vọng thứ này sẽ làm bạn vui lên
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Thứ này có giúp được bạn không?
+  utter_happy:
+  - text: Tuyệt vời, tôi mừng vì giúp được bạn
+  - text: Tuyệt vời, cố gắng lên
+  utter_goodbye:
+  - text: Bye
+  - text: Tạm biệt
+  - text: Chúc bạn có một ngày tốt lành
+  utter_iamabot:
+  - text: Xin chào! Tôi là Rasa Bot
+  utter_unclear:
+  - text: Tôi không hiểu. Bạn có thể nói lại được không?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_news
+- utter_cheer_up
+- utter_goodbye
+- utter_greet
+- utter_greet_with_name
+- utter_happy
+- utter_unclear

@@ -1,0 +1,206 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - start
+    - /start
+    - hey
+    - hello
+    - hi
+    - hello there
+    - moin
+    - hey there
+    - let's go
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - xin chào
+    - chào bạn
+    - chào
+    - chào buổi sáng
+    - chào buổi tối
+    - Hello
+    - xin chào bot
+- intent: goodbye
+  examples: |
+    - good night
+    - night
+    - bye
+    - goodbye
+    - have a nice day
+    - bye bye
+    - see you later
+    - tạm biệt
+    - hẹn gặp lại
+    - gặp lại sau
+    - gặp sau
+    - đi đây
+    - bai
+    - tạm biệt rasa
+- intent: affirm
+  examples: |
+    - yes
+    - correct
+    - đúng rồi
+    - đúng
+    - vâng ạ
+    - đúng rồi ạ
+    - chuẩn rồi
+    - chính xác
+    - đúng rồi đó
+    - uh
+    - dạ
+    - ừm
+    - ừ
+    - ye
+    - nó đó
+    - tks
+    - thank
+    - cảm ơn nha
+    - uhm
+    - [em](cust_sex) cảm ơn
+- intent: deny
+  examples: |
+    - không
+    - không ạ
+    - không phải
+    - sai rồi
+    - không đâu
+    - chẳng phải
+    - không hẳn ạ
+    - có phải đâu
+    - tôi không nghĩ vậy
+    - có đúng đâu
+    - không đúng đâu
+    - sai
+    - không bao giờ
+    - đừng như vậy
+    - không nên như vậy
+- intent: mood_great
+  examples: |
+    - tôi đang khỏe
+    - tốt
+    - rất tốt
+    - vui
+    - tuyệt vời
+    - không buồn
+    - khỏe
+    - rất khỏe
+    - đang khỏe
+    - Vui
+    - mình khỏe
+- intent: mood_unhappy
+  examples: |
+    - mệt
+    - tôi đang mệt
+    - tôi buồn
+    - tôi không cảm thấy khỏe
+    - tôi thất vọng
+    - rất buồn
+    - quá buồn
+    - tôi cảm thấy mệt mỏi
+    - không được khỏe
+    - không vui
+    - không vui ạ
+    - anh buồn
+    - chị buồn
+    - mình buồn
+    - mình đang buồn ạ
+    - buồn
+    - tôi không vui
+    - anh không vui
+    - [em](cust_sex) ko vui
+- intent: bot_challenge
+  examples: |
+    - bạn có phải là robot?
+    - bạn có phải là con người
+- intent: give_name
+  examples: |
+    - [Anh](cust_sex) tên là [Tùng](cust_name)
+    - [anh](cust_sex) tên là [Tùng](cust_name)
+    - [Chị](cust_sex) tên là [Trang](cust_name)
+    - [chị](cust_sex) tên là [trang](cust_name)
+    - [Em](cust_sex) tên là [Huy](cust_name)
+    - [em](cust_sex) tên là [Huy](cust_name)
+    - [em](cust_sex) tên là [huy](cust_name)
+    - [Cô](cust_sex) là [Linda](cust_name)
+    - [cô](cust_sex) là [linda](cust_name)
+    - [Dì](cust_sex) là [Lan](cust_name)
+    - [dì](cust_sex) là [lan](cust_name)
+    - [Chú](cust_sex) [Tư](cust_name)
+    - [chú](cust_sex) [tư](cust_name)
+    - [Bác](cust_sex) [Bá](cust_name)
+    - [bác](cust_sex) [bá](cust_name)
+    - [Mình]{"entity": "cust_sex", "value": "b\u1ea1n"} là [Thắng](cust_name)
+    - [mình]{"entity": "cust_sex", "value": "b\u1ea1n"} là [thắng](cust_name)
+    - [Chú](cust_sex) tên là [Dương](cust_name)
+    - [chú](cust_sex) tên là [dương](cust_name)
+    - [Đức](cust_name) ạ
+    - [đức](cust_name) ạ
+    - Tôi tên là [Tùng](cust_name)
+    - tôi tên là [tùng](cust_name)
+    - Tao tên [Ba](cust_name)
+    - tao tên [ba](cust_name)
+    - Tôi tên là [Tuấn](cust_name)
+    - Tớ [Tú](cust_name)
+    - Tui tên là [Vi](cust_name)
+    - tui tên là [vi](cust_name)
+    - [Anh](cust_sex) [Tùng](cust_name)
+    - [anh](cust_sex) [tùng](cust_name) ạ
+    - [chị](cust_sex) tên [Nhi](cust_name)
+    - [chị](cust_sex) tên [nhi](cust_name)
+    - [Anh](cust_sex) tên [Tùng](cust_name)
+    - [anh](cust_sex) tên [tùng](cust_name)
+    - [Mình]{"entity": "cust_sex", "value": "b\u1ea1n"} tên [Tùng](cust_name)
+    - [chị](cust_sex) [Nên](cust_name)
+    - tôi tên [Nguyễn Văn A](cust_name)
+    - [em](cust_sex) tên [Như](cust_name)
+- intent: nlu_fallback
+  examples: |
+    - ajodsjaosdj
+    - oooooooooooooooooooooooooooooooooo
+    - None
+    - Null
+    - Bla
+    - na ajosh hqoasjodjo JOJOs a
+    - Na jaosjdq ajouw JXXXjjA qoasjdoa
+    - xjoijaoj
+- intent: read_news
+  examples: |
+    - tin tức
+    - thời sự
+    - xem báo
+    - đọc báo
+    - có bài báo cho hôm nay không
+    - tôi muốn xem báo
+    - tôi muốn đọc báo
+    - tôi muốn xem tin tức
+    - tôi muốn xem thời sự
+    - muốn xem báo
+    - muốn đọc báo
+    - muốn xem tin tức
+    - muốn xem thời sự
+    - có gì mới hôm nay không
+    - có chuyện gì xảy ra hôm nay không
+    - có sự kiện diễn ra hôm nay không
+    - mình muốn đọc báo
+- synonym: bạn
+  examples: |
+    - Mình
+    - mình
+- synonym: buồn
+  examples: |
+    - Buồn
+    - bùn
+    - Bùn
+    - buon
+    - buonn
+    - không vui
+    - mệt
+- synonym: vui
+  examples: |
+    - Vui
+    - vuii
+    - vuui
+    - không buồn
+    - khỏe
